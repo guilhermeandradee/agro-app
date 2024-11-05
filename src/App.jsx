@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header';
+import Posts from './components/Posts';
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     <>
         <main className='w-100 h-100-vh '>
             <Header />
+
+            <Posts />
         </main>
     </>
   )
