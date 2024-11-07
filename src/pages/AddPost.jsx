@@ -3,6 +3,7 @@ import '../App.css'
 import { MdOutlineImage } from "react-icons/md";
 import { IoPaperPlane } from "react-icons/io5";
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 
 function AddPost(){

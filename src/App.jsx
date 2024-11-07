@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-        <main className='w-100 h-100-vh '>
+        <main className='w-100 h-100-vh d-flex flex-column'>
             <Header />
 
             <Posts />
