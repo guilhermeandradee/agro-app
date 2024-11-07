@@ -52,3 +52,21 @@
 .bg-gray {
   background-color: #ECECEC;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.button-header {
+  transition: .3s;
+
+}
+.button-header:hover {
+  color: #7e7e7e !important;
+  
+}
+.miniature {
+  transition: .3s;
+}
+.miniature:hover {
+  background-color: #c7c7c7;
+}
