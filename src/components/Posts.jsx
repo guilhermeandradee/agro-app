@@ -10,7 +10,7 @@ function Posts(){
         return postagens && postagens.map(post => (
             
             <div
-            className="col-12 col-md-3 bg-gray mx-0 mx-md-1 mb-5 rounded p-3 shadow cursor-pointer"
+            className="col-12 col-md-3 bg-gray mx-0 mx-md-1 mb-5 rounded p-3 shadow cursor-pointer miniature"
             onClick={() => {
                 localStorage.setItem("postagemSelecionada", JSON.stringify(post));
                 navigate(`/postagem/${post.id}`);
