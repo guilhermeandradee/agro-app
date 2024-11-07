@@ -54,7 +54,7 @@ export function PostagensProvider({ children }) {
 
     const adicionarPostagem = (autor, titulo, conteudo, imagem) => {
         if (!autor || !titulo || !conteudo || !imagem) {
-            return alert('Preencha as informações corretamente!');
+            throw new Error('Preencha as informações corretamente!')
         }
 
         setPostagens(prevPostagens => [
