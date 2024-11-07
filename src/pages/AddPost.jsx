@@ -2,6 +2,8 @@ import Header from "../components/Header"
 import '../App.css'
 import { MdOutlineImage } from "react-icons/md";
 import { IoPaperPlane } from "react-icons/io5";
+
+
 import Footer from "../components/Footer";
 import { useState } from "react";
 
@@ -9,7 +11,7 @@ import { useState } from "react";
 function AddPost(){
     return(
         <>
-            <Header/>
+            <Header buttonModifier={'add-post'} />
             <main className="h-100-vh d-flex flex-column  align-items-center">
                 
                 <div className="row w-100 d-flex justify-content-center">
