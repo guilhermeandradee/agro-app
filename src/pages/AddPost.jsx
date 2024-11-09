@@ -88,7 +88,7 @@ function AddPost(){
                         <div className="w-100 mt-3 d-flex justify-content-end px-3">
                             <div 
                             onClick={handleSubmit}
-                            className="bg-black text-light d-flex justify-content-center align-items-center rounded-circle cursor-pointer" 
+                            className="bg-black btn-adicionar text-light d-flex justify-content-center align-items-center rounded-circle cursor-pointer" 
                             style={{width: '30px', height: '30px'}}>
                                 <IoPaperPlane/>
                             </div>

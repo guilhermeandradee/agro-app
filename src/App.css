@@ -70,3 +70,11 @@
 .miniature:hover {
   background-color: #c7c7c7;
 }
+
+.btn-adicionar {
+  transition: .3s;
+}
+.btn-adicionar:hover {
+  background-color: #c7c7c7 !important;
+  color: #020202 !important;
+}
