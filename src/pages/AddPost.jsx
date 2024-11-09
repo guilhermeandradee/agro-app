@@ -5,10 +5,12 @@ import { IoPaperPlane } from "react-icons/io5";
 
 
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePostagens } from "../components/PostagensProvider";
 
 function AddPost(){
+
+    const [showImage, setShowImage] = useState(false)
 
     const [mensagemAdicionarPostagem, setMensagemAdicionarPostagem] = useState({
         message: null,
@@ -20,7 +22,7 @@ function AddPost(){
     const [autor, setAutor] = useState('Você');
     const [titulo, setTitulo] = useState('');
     const [conteudo, setConteudo] = useState('');
-    const [imagem, setImagem] = useState('http');
+    const [imagem, setImagem] = useState('');
 
     const handleSubmit = () => {
         try {
@@ -33,12 +35,19 @@ function AddPost(){
              }, 3000);
         } catch (error) {
             setMensagemAdicionarPostagem({ message: error.message, success: false})
-            
+
             setTimeout(() => {
                setMensagemAdicionarPostagem({ message: null,success: null }) 
             }, 3000);
         }
     }
+    console.log(imagem)
+
+    useEffect(() => {
+        if(showImage == false) {
+            setImagem('')
+        }
+    }, [showImage])
 
     return(
         <>
@@ -54,7 +63,9 @@ function AddPost(){
                             className="w-100 me-4 rounded px-3 py-2  border-0 shadow" 
                             type="text" />
 
-                            <button className="w-30 p-1 rounded border-0 shadow" ><MdOutlineImage/></button>
+                            <button 
+                            onClick={() => setShowImage(!showImage)}
+                            className="w-30 p-1 rounded border-0 shadow" ><MdOutlineImage/></button>
                         </div>
                         <div className="col-12 mt-3">
                             <textarea 
@@ -64,6 +75,14 @@ function AddPost(){
                             name="" 
                             id=""></textarea>
                         </div>
+
+                        { showImage ? <input
+                            onChange={(e) => setImagem(e.target.value)} 
+                            placeholder="https://images.pexels.com/photos/image.png" 
+                            className="w-100 me-4 rounded px-3 mt-3 py-2 border-0 shadow" 
+                            type="text" /> : null }
+
+                        
                         <div className="w-100 mt-3 d-flex justify-content-end px-3">
                             <div 
                             onClick={handleSubmit}
@@ -74,7 +93,7 @@ function AddPost(){
                         </div>
                          
                     </div>
-                    
+
                     { mensagemAdicionarPostagem.message ? (<div className={`col-md-8 col-10 mt-5 p-3 ${ mensagemAdicionarPostagem.success === true ? 'bg-success' : mensagemAdicionarPostagem.success === false && 'bg-danger' } text-light d-flex flex-column justify-content-center rounded-3 shadow text-center`}>{mensagemAdicionarPostagem.message}</div>) : null }
                 </div>
 
