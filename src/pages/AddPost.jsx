@@ -6,11 +6,13 @@ import { IoPaperPlane } from "react-icons/io5";
 
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { usePostagens } from "../components/PostagensProvider";
 
 function AddPost(){
 
     const [showImage, setShowImage] = useState(false)
+    const navigate = useNavigate();
 
     const [mensagemAdicionarPostagem, setMensagemAdicionarPostagem] = useState({
         message: null,
@@ -32,7 +34,8 @@ function AddPost(){
 
             setTimeout(() => {
                 setMensagemAdicionarPostagem({ message: null,success: null }) 
-             }, 3000);
+                navigate('/')
+            }, 3000);
         } catch (error) {
             setMensagemAdicionarPostagem({ message: error.message, success: false})
 
@@ -41,7 +44,6 @@ function AddPost(){
             }, 3000);
         }
     }
-    console.log(imagem)
 
     useEffect(() => {
         if(showImage == false) {

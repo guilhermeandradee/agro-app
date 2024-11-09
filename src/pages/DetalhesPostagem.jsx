@@ -13,28 +13,28 @@ const DetalhesPostagem = () => {
     }
 
     // Caminho da imagem
-    const imagemPost = post.imagem || `/images/${post.id}.jpg`;
+    const imagemPost = post.imagem;
 
     return (
         <div className="d-flex flex-column min-vh-100">
             {/* Cabeçalho */}
-            <Header />
+            <Header buttonModifier={'add-post'} />
 
             {/* Conteúdo da Postagem */}
             <main className="container my-5 flex-grow-1">
                 <div className="card shadow-sm mx-auto" style={{ maxWidth: "600px" }}>
-                    <div className="card-body">
+                    <div className="card-body px-5">
                         {/* Autor */}
                         <div className="text-center mb-3">
                             <span className="text-muted">{post.autor}</span>
                         </div>
 
                         {/* Imagem do Post */}
-                        <div className="text-center mb-4">
+                        <div className="text-center mb-4 w-100">
                             <img 
-                                src={imagemPost} 
-                                alt="Imagem do post" 
-                                className="img-fluid rounded"
+                                src={imagemPost}
+                                className="img-fluid w-100 rounded"
+                                style={{}}
                             />
                         </div>
 
