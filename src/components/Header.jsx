@@ -1,6 +1,10 @@
 import { IoIosAddCircle } from "react-icons/io";
+import { IoChevronBackOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+function Header({ buttonModifier }){
 
-function Header(){
+    const navigate = useNavigate()
+
     return(
         <>
             <header className="w-100 bg-black text-light py-2 px-4 shadow">
@@ -12,7 +16,15 @@ function Header(){
                     a green future</h2>
                 </div>
                 <div className="w-100 row d-flex">
-                    <IoIosAddCircle className="" style={{ width: '65px', height: '65px'}}  />
+                    { buttonModifier === 'add-post' ? (
+                        <IoChevronBackOutline 
+                        onClick={() => navigate('/')} 
+                        className="cursor-pointer button-header" 
+                        style={{ width: '65px', height: '65px'}} />
+                    ) : <IoIosAddCircle 
+                    onClick={() => navigate('/add-post')} 
+                    className="cursor-pointer button-header" 
+                    style={{ width: '65px', height: '65px'}}  /> }
                 </div>
             </header>
         </>
