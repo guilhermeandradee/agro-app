@@ -5,6 +5,7 @@ import { usePostagens } from "./PostagensProvider";
 function Posts(){
 
     const { postagens } = usePostagens(); 
+    console.log(postagens)
 
     const mostrarPostagens = () => {
         return postagens && postagens.map(post => (
@@ -17,7 +18,7 @@ function Posts(){
             }}>
                             
                 <div className="d-flex w-100 align-items-center mb-3">
-                    <div className="pt-2 rounded bg-black me-3" style={{width: '30px', height: '30px'}}>
+                    <div className="pt-2 rounded bg-black me-3" style={{width: '30px', height: '30px', backgroundImage: 'url(/public/images/thanos.png)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
                     </div>
                     
                     <p className="m-0">{post.autor}</p>

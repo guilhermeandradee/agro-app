@@ -53,7 +53,7 @@ export function PostagensProvider({ children }) {
     ])
 
     const adicionarPostagem = (autor, titulo, conteudo, imagem) => {
-        if (!autor || !titulo || !conteudo || !imagem) {
+        if (!autor || !titulo || !conteudo) {
             throw new Error('Preencha as informações corretamente!')
         }
 
